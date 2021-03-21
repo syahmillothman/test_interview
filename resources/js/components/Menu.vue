@@ -37,9 +37,9 @@
               <router-link class="dropdown-item" :to="{ name: 'manage-users' }"
                 >Manage Users</router-link
               >
-              <!-- <router-link class="dropdown-item" :to="{ name: 'manage-todos' }"
+              <router-link class="dropdown-item" :to="{ name: 'manage-todos' }"
                 >Todo List</router-link
-              > -->
+              >
             </div>
           </li>
         </ul>
