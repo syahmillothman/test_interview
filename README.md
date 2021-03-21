@@ -18,16 +18,16 @@
 ##### Login detail
 
 ###### login for administrator.
-`email: admin@test.com / password: 123`
+`email: admin@test.com / password: password`
 ###### login for role user
-`email: user@test.com, password: 123`
+`email: user@test.com, password: password`
 
 `Admin API endpoint`
 
 **Login endpoint**
 ```bash
 curl -X POST http://localhost:8000/api/v1/login  -H "Content-type: application/json" \
--d '{"email":"admin@test.com","123":"123"}'
+-d '{"email":"admin@test.com","password":"password"}'
 ```
 
 **Get users endpoint**
