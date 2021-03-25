@@ -3,7 +3,7 @@
 ### Deployment step
 
 ##### 1. Clone repository
-``` git clone https://github.com/syahmillothman/test-inteview.git ```
+``` git clone https://github.com/syahmillothman/test_inteview.git ```
 ##### 2. Composer install
 ``` composer install ```
 ##### 3. Create and setup .env file
