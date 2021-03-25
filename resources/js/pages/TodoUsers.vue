@@ -1,7 +1,7 @@
 
 <template>
   <v-fragment name="todos">
-    <navigation-menu :role="todo.role_id"></navigation-menu>
+    <navigation-menu v-if="user != null" :role="user.role_id"></navigation-menu>
 
     <div v-if="showEditModal">
       <transition name="modal">
@@ -209,6 +209,8 @@ import axios from "axios";
 export default {
   mixins: [appMixins],
   mounted() {
+    this.getUser().then((response) => (this.user = response.data.data));
+    
     this.getTodo()
       .then((response) => {
         this.todo = response.data.data;
@@ -233,9 +235,10 @@ export default {
       loading: false,
       todo: null,
       todos: [],
+      user: null,
       users_id: null,
       todoForm: {
-        users_id: 5,
+        users_id: null,
         body: null,
         is_complete: null,
       },
@@ -258,8 +261,8 @@ export default {
             },
           })
           .then((response) => {
-            this.todo = [...this.todos, response.data.data];
-            window.location.reload();
+            this.todos = [...this.todos, response.data.data];
+            // window.location.reload();
 
             this.closeModal();
 

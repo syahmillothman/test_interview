@@ -44,11 +44,12 @@ class TodoController extends Controller
         $todo = Todo::create([
             'body' => request('body'),
             'is_complete' => request('is_complete'),
-            'users_id' => 5,
-            'created_at' => date("Y-m-d H:i:s"),
-            'updated_at' => date("Y-m-d H:i:s")
+            'users_id' => request('users_id'),
+            // 'created_at' => date("Y-m-d H:i:s"),
+            // 'updated_at' => date("Y-m-d H:i:s")
         ]);
 
+        $todo->load('user');
         return $this->getResponseFactory()->giveSuccessResponse($todo);
     }
 

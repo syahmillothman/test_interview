@@ -1,7 +1,7 @@
 
 <template>
   <v-fragment name="users">
-    <navigation-menu :role="todos.role_id"></navigation-menu>
+    <navigation-menu v-if="user != null" :role="user.role_id"></navigation-menu>
 
     <div v-if="showEditModal">
       <transition name="modal">

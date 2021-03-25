@@ -1,7 +1,7 @@
 
 <template>
-  <v-fragment :name="'dashboard'">
-    <navigation-menu :role="user.role_id"></navigation-menu>
+  <v-fragment name="'dashboard'">
+    <navigation-menu :role="user == null ? 2: user.role_id"></navigation-menu>
     <div id="container col-8" style="margin-top: 3em">
       <notifications group="success" />
       <notifications group="error" />
